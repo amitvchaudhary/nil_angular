@@ -1,0 +1,10 @@
+<!-- {{houseList | json}} -->
+
+<a (click)="newcar()">Click Here !</a>
+
+<div *ngFor="let c of carList">
+    <p>Comapnay Name: {{c.companyName}}, </p>
+    <p>Color: {{c.color}}</p>
+    <p>Model: {{c.model}}</p>
+    <p>Price: {{c.price}}</p>
+</div>
