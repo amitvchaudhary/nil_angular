@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  customeClick: string = 'Hello';
+
+  GotClicked(e){
+    alert(e);
+  }
+ 
 }

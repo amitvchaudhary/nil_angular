@@ -1,10 +1,36 @@
-<!-- {{houseList | json}} -->
+<!-- <div class="full-width">
+    <label class="label">Name:</label> <input type="text" [(ngModel)]="car.name" class="textbox">
+</div>
+<div class="full-width"><label class="label">Color: </label><input type="text" [(ngModel)]="car.color" class="textbox">
+</div>
+<div class="full-width"><label class="label">Variant: </label><input type="text" [(ngModel)]="car.Variant" class="textbox"></div>
+<div class="full-width"><label class="label">Price: </label><input type="text" [(ngModel)]="car.Price" class="textbox">
+</div> -->
 
-<a (click)="newcar()">Click Here !</a>
+<button (click)="addcar();" class=" button">ADD CAR</button>
 
-<div *ngFor="let c of carList">
-    <p>Comapnay Name: {{c.companyName}}, </p>
-    <p>Color: {{c.color}}</p>
-    <p>Model: {{c.model}}</p>
-    <p>Price: {{c.price}}</p>
+<div class="addcarlist float-left">
+    <p><button class="button" (click)="sendFirstCarToProduction();">ADD TO RIGHT</button></p>
+    <ul>
+        <li *ngFor="let car of carList; let i = index;" class="listcar" title="{{car.key}}" (click)="sendToProduction(i);">
+            <p>Car Name : {{car.name}}</p>
+            <p>Car Color : {{car.color}}</p>
+            <p>Car Color : {{car.Variant}}</p>
+            <p>Car Color : {{car.Price}}</p>
+
+        </li>
+    </ul>
+</div>
+
+<div class="addcarlist float-right">
+    <p><button class="button" (click)="sendFirstCarToStock();">ADD TO LEFT</button></p>
+    <ul>
+        <li *ngFor="let car of caraddList; let i = index;" class="listcar" title="{{car.key}}" (click)="sendToStock(i);">
+            <p>Car Name : {{car.name}}</p>
+            <p>Car Color : {{car.color}}</p>
+            <p>Car Color : {{car.Variant}}</p>
+            <p>Car Color : {{car.Price}}</p>
+
+        </li>
+    </ul>
 </div>
