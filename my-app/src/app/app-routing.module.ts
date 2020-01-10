@@ -6,10 +6,17 @@ import { C3Component } from './c3/c3.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/c1', pathMatch: 'full' },
-  { path: 'c1', component: C1Component },
-  { path: 'c2', component: C2Component },
-  { path: 'c3', component: C3Component }
+  // { path: '', redirectTo: '/c1', pathMatch: 'full' },
+  // { path: 'c1', component: C1Component },
+  // { path: 'c2', component: C2Component },
+  // { path: 'c3', component: C3Component }
+  { path: 'data1', loadChildren: './data1/data1.module#Data1Module'},
+  { path: 'data2', loadChildren: './data2/data2.module#Data2Module'},
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
